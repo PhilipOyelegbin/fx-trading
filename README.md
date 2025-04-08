@@ -10,7 +10,7 @@ This project provides the core functionality to manage users, wallets, currency 
 
 ```bash
 git clone <repository-url>
-cd fx-trading-app-backend
+cd fx-trading
 ```
 
 ### **2. Install Dependencies**
@@ -45,8 +45,8 @@ MAIL_USER=your_email@gmail.com
 MAIL_PASSWORD=your_email_password
 
 # RapidApi (Currency Conversion and Exchange Rates)
-RAPIDAPI_KEY=b93a3fc3e4mshb8f920f57bbf114p19b047jsn70ed4547ccc2
-RAPIDAPI_HOST=currency-conversion-and-exchange-rates.p.rapidapi.com
+RAPIDAPI_KEY=<your_api_key>
+RAPIDAPI_HOST=<your_host_api>
 ```
 
 ### **4. Configure the Database**
@@ -66,7 +66,7 @@ yarn run start:dev
 
 1. **Currency Support**: The system supports NGN, USD, EUR, GBP, and other international currencies. Ensure the wallet entity has been configured correctly for multi-currency support.
 2. **Authentication**: Users authenticate using JWT tokens.
-3. **Real-Time FX Rates**: External FX rate APIs (e.g., RapidAPi: Currency Conversion and Exchange Rates) are used for fetching real-time rates. A caching mechanism (e.g., Redis) is assumed for efficiency.
+3. **Real-Time FX Rates**: External FX rate APIs (e.g., RapidAPi: Currency Conversion and Exchange Rates) are used for fetching real-time rates. A caching package (e.g., memory-cache) is assumed for efficiency.
 4. **Email Verification**: Users must verify their email addresses before performing wallet or trading operations.
 5. **Database**: MySQL is used to store user, wallet, and transaction data.
 
@@ -108,7 +108,7 @@ http://localhost:<SPECIFIED_PORT>
 
 ### **Real-Time FX Rates**
 
-- Integrated external FX rate APIs with caching using Redis to avoid unnecessary API calls.
+- Integrated external FX rate APIs with caching using memory-cache to avoid unnecessary API calls.
 
 ### **Modular Design**
 
